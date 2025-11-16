@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audioleft"
+version = "0.1.0"
+description = "Extract audio from video files preserving original codec"
+requires-python = ">=3.10"
+authors = [
+    {name = "audioleft"},
+]
+dependencies = [
+    "ffmpeg-python>=0.2.0",
+]
+
+[project.scripts]
+audioleft = "audioleft.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["audioleft*"]
