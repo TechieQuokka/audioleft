@@ -31,7 +31,8 @@ def main():
     try:
         # Determine output path
         if args.output:
-            output_path = args.output
+            # Force .wav extension even if user specifies different extension
+            output_path = str(Path(args.output).with_suffix('.wav'))
         else:
             output_path = get_output_path(args.input)
 
